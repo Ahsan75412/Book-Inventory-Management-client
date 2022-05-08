@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import Loading from '../../Shared/Loading/Loading';
 
 
 const Login = () => {
@@ -27,7 +28,7 @@ const Login = () => {
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     if(loading || sending){
-        // return <Loading></Loading>
+        return <Loading></Loading>
     }
 
 
@@ -36,7 +37,8 @@ const Login = () => {
     }
 
     if (error) {
-        errorElement = <p className='text-danger text-center'>Error: {error?.message} </p>
+        errorElement = <p className='text-danger text-center font-weight-bold'>Error: {error?.message} </p>
+       
 
     }
 

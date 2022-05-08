@@ -3,6 +3,9 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 const SocialLogin = () => {
 
@@ -12,7 +15,7 @@ const SocialLogin = () => {
     let errorElement;
 
     if(loading){
-        // return <Loading></Loading>
+        return <Loading></Loading>
     }
 
     if (error) {
@@ -47,7 +50,7 @@ const SocialLogin = () => {
                     onClick={() => signInWithGoogle()}
 
                     className='btn btn-success w-50 d-block mx-auto my-2'>
-                    <i class="fa-brands fa-google"></i>
+                    <FontAwesomeIcon icon="fa-brands fa-google" />
                     <span className='px-2'> Google Sign In</span>
                 </button>
             </div>

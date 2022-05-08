@@ -1,0 +1,47 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    background: #181a1b;
+}
+
+.footer-mid, .footer-end {
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+    color: rgb(193, 192, 192);
+}
+
+.fas2 {
+    text-align: center;
+    font-size: 19px;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.fab2 {
+    color: #c48b11;
+    font-size: 35px;
+    margin-right: 20px;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer ul > li {
+    display: inline-block;
+}
+
+.footer-icon {
+    color: #fff;
+    background-color: #c48b11;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    margin: 0px 15px;
+}
+
+.footer img {
+    width: 50px;
+}
