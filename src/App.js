@@ -7,6 +7,7 @@ import Register from './Pages/Login/Register/Register';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import NotFound from './Pages/Shared/NotFound/NotFound';
+import Blogs from './Pages/Blogs/Blogs';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/home" element={<Home></Home>} />
         <Route path="/login" element={<Login></Login>} />
         <Route path="/register" element={<Register></Register>} />
+        <Route path="/blogs" element={<Blogs></Blogs>} />
 
        
         
