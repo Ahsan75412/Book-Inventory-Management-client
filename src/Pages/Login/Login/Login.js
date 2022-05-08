@@ -5,8 +5,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
-// import Loading from '../../Sheared-Component/Loading/Loading';
-// import SocialLogin from '../SocialLogin/SocialLogin';
+
 
 const Login = () => {
     const emailRef = useRef('');
@@ -86,7 +85,7 @@ const Login = () => {
             </Button>
         </Form>
         {errorElement}
-        <p>New to genius car? <Link to="/register" className='text-primary text-decoration-none' onClick={navigateRegister}>Please register</Link></p>
+        <p>New to Book Inventory? <Link to="/register" className='text-primary text-decoration-none' onClick={navigateRegister}>Please register</Link></p>
 
         <p>Forget Password? <button  className='text-primary btn btn-link text-decoration-none' onClick={resetPassword}>Reset Password</button></p>
 
