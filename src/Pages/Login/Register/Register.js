@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
-import './Register.css';
 import auth from '../../../firebase.init';
-import useToken from '../../../hooks/useToken';
+import './Register.css';
 
 const Register = () => {
+
     const [agree, setAgree] = useState(false);
     const [
         createUserWithEmailAndPassword,
@@ -14,7 +15,6 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth , {sendEmailVerification: true});
     const [updateProfile, updating, UpdateError] = useUpdateProfile(auth);
-    const [token] = useToken(user);
     const navigate = useNavigate();
 
     const navigateLogin = (event) => {
@@ -26,8 +26,8 @@ const Register = () => {
         // return <Loading></Loading>
     }
 
-    if (token) {
-        navigate('/home');
+    if (user) {
+        console.log(user);
     }
 
     const handleRegister = async (event) => {
@@ -42,7 +42,7 @@ const Register = () => {
        await createUserWithEmailAndPassword(email, password);
        await updateProfile({ displayName: name});
        console.log('Updated profile');
-    //    navigate('/home');
+       navigate('/home');
 
     }
     return (
@@ -57,7 +57,7 @@ const Register = () => {
                 <input type="password" name="password" id="" placeholder='Your Password' required />
 
                 <input onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />
-                
+             
 
                 <label className={`ps-2 ${agree ? '' : 'text-danger'}`} htmlFor="terms">I agree to the terms and conditions</label>
 
