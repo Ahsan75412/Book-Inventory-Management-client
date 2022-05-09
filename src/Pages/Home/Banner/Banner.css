@@ -1,6 +1,5 @@
 .home-banner {
     height: 100vh;
-    /* background: url('https://res.cloudinary.com/dg5xbio2w/image/upload/v1651946490/Tesla-Cars/Cover/cover_1_k6ipxr.jpg' )  no-repeat center fixed; */
     background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url('https://res.cloudinary.com/dg5xbio2w/image/upload/v1651946490/Tesla-Cars/Cover/cover_1_k6ipxr.jpg');
     background-size: cover;
     
@@ -39,7 +38,7 @@
         padding: 0px 20px;
     }
     .banner-title {
-        padding-top: 300px;
+        padding-top: 100px;
         font-size: 1.7rem;
     }
 }

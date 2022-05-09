@@ -1,0 +1,26 @@
+.product{
+    border: 1px  solid lightgrey;
+    border-radius: 10px;
+    /* padding: 10px; */
+    padding-bottom: 10px;
+    text-align: center;
+    
+}
+
+.stye{
+    color: antiquewhite;
+    font-weight: 500;
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: .5px;
+}
+
+.card{
+    background-color: #1B1C1E;
+    margin: 5px;
+    
+}
+.bredth{
+    height: 250px;
+}
