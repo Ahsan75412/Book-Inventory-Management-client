@@ -3,7 +3,8 @@ import { useAuthState, useSendEmailVerification } from 'react-firebase-hooks/aut
 import { Navigate, useLocation } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../../firebase.init';
-import Loading from '../../Sheared-Component/Loading/Loading';
+import Loading from '../../Shared/Loading/Loading';
+
 
 const RequireAuth = ({children}) => {
     const [user , loading] = useAuthState(auth);

@@ -46,10 +46,10 @@ const SocialLogin = () => {
             {errorElement}
 
             <div>
-                <button
+                <button 
                     onClick={() => signInWithGoogle()}
 
-                    className='btn btn-success w-50 d-block mx-auto my-2'>
+                    className='btn btn-outline-warning w-50 d-block mx-auto my-2'>
                     <FontAwesomeIcon icon="fa-brands fa-google" />
                     <span className='px-2'> Google Sign In</span>
                 </button>

@@ -7,6 +7,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../../Shared/Loading/Loading';
+import './Login.css';
 
 
 const Login = () => {
@@ -68,8 +69,8 @@ const Login = () => {
      }
     }
     return (
-        <div className='container w-50 mx-auto mt-5'>
-        <h2 className='text-primary text-center'>Please Login</h2>
+        <div className='container w-50 mx-auto mt-5 login text-white'>
+        <h2 className='text-warning text-center mb-5'>Please Login</h2>
 
         <Form onSubmit={handleSubmit} >
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -83,14 +84,14 @@ const Login = () => {
                 <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
             </Form.Group>
          
-            <Button variant="primary w-50 mx-auto d-block mb-3" type="submit">
+            <Button variant="outline-warning w-50 mx-auto d-block mb-3" type="submit">
                 Login
             </Button>
         </Form>
         {errorElement}
-        <p>New to Book Inventory? <Link to="/register" className='text-primary text-decoration-none' onClick={navigateRegister}>Please register</Link></p>
+        <p>New to Book Inventory? <Link to="/register" className='text-warning text-decoration-none' onClick={navigateRegister}>Please register</Link></p>
 
-        <p>Forget Password? <button  className='text-primary btn btn-link text-decoration-none' onClick={resetPassword}>Reset Password</button></p>
+        <p>Forget Password? <button  className='text-warning btn btn-link text-decoration-none' onClick={resetPassword}>Reset Password</button></p>
 
       {/* social login component here  */}
 

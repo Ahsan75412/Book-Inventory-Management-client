@@ -10,6 +10,7 @@ import Blogs from './Pages/Blogs/Blogs';
 import Footer from './Pages/Shared/Footer/Footer';
 import ProductDetail from './Pages/productDetail/ProductDetail';
 import Inventory from './Pages/Inventory/Inventory';
+import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 
 
 function App() {
@@ -19,12 +20,18 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home></Home>} />
-        <Route path="/inventory/:productId" element = {<ProductDetail></ProductDetail>}/>
         <Route path="/login" element={<Login></Login>} />
         <Route path="/register" element={<Register></Register>} />
         <Route path="/blogs" element={<Blogs></Blogs>} />
-
         <Route path="/inventory" element={<Inventory></Inventory>} />
+
+        <Route path="/inventory/:productId" element = {
+            <RequireAuth>
+             <ProductDetail></ProductDetail>
+            </RequireAuth>
+        }></Route>
+
+      
 
 
 

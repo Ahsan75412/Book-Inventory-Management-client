@@ -25,14 +25,15 @@ const ProductDetail = () => {
                             <p class="card-text">{product.description}</p>
                             <p className='text-warning'>Quantity: {product.quantity}</p>
                             <input type="number" name="" id="" placeholder='Update Quantity' />
-                            <button className='btn btn-warning mx-3'>Update</button>
-                            <button></button>
+                            <button className='btn btn-warning mx-3'>Restock </button>
+                            <button className='btn btn-outline-warning '>Delivered</button>
                         </div>
                     </div>
                 </div>
             </div>
 
         </div>
+      
     );
 };
 
