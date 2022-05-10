@@ -9,7 +9,7 @@ const Products = () => {
 
 
     useEffect(() => {
-        fetch('products.json')
+        fetch('http://localhost:5000/product')
             .then(res => res.json())
             .then(data => { setProducts(data); })
 
@@ -20,14 +20,14 @@ const Products = () => {
                 <h2 className='Products-title mt-5 text-white'>FEATURED <span className='color'>BOOKS</span></h2>
                 <div className="Products-container">
                 {
-                    pathname === '/home' ? (
+                    pathname === '/home' ?  (
                         products.slice(0, 6).map(product => <Product
-                            key={product.id}
+                            key={product._id}
                             Product={product}
                         ></Product>)
                     ) : (
                         products.map(product => <Product
-                            key={product.id}
+                            key={product._id}
                             Product={product}
                         ></Product>)
                     )

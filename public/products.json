@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+    
         "product_name": "Dan Brown's",
         "quantity" : "12",
         "price": "300",
@@ -10,7 +10,7 @@
     },
     
     {
-        "id": 2,
+    
         "product_name": "The Song Of Achilles",
         "quantity" : "18",
         "price": "800",
@@ -21,7 +21,7 @@
 
     
     {
-        "id": 3,
+    
         "product_name": "Goosebumps",
         "quantity" : "8",
         "price": "300",
@@ -30,7 +30,7 @@
         "img": "https://res.cloudinary.com/dg5xbio2w/image/upload/v1651946425/Tesla-Cars/Books/book8_hk5rc1.jpg"
     },
     {
-        "id": 4,
+    
         "product_name": "Business Startup",
         "quantity" : "120",
         "price": "550",
@@ -39,7 +39,7 @@
         "img": "https://res.cloudinary.com/dg5xbio2w/image/upload/v1651946425/Tesla-Cars/Books/book5_psnq9p.jpg"
     },
     {
-        "id": 5,
+    
         "product_name": "Narnia",
         "quantity" : "25",
         "price": "400",
@@ -48,7 +48,7 @@
         "img": "https://res.cloudinary.com/dg5xbio2w/image/upload/v1651946425/Tesla-Cars/Books/book6_x3ecyu.jpg"
     },
     {
-        "id": 6,
+    
         "product_name": "The Name Of The Book",
         "quantity" : "9",
         "price": "100",
@@ -57,7 +57,7 @@
         "img": "https://res.cloudinary.com/dg5xbio2w/image/upload/v1651946424/Tesla-Cars/Books/book4_yuspsa.jpg"
     },
     {
-        "id": 7,
+    
         "product_name": "The Guest List",
         "quantity" : "15",
         "price": "500",
@@ -66,7 +66,7 @@
         "img": "https://res.cloudinary.com/dg5xbio2w/image/upload/v1651946424/Tesla-Cars/Books/book11_x8l8er.jpg"
     },
     {
-        "id": 8,
+    
         "product_name": "Freezing Order",
         "quantity" : "22",
         "price": "900",
@@ -75,7 +75,7 @@
         "img": "https://res.cloudinary.com/dg5xbio2w/image/upload/v1651946424/Tesla-Cars/Books/book12_okfe30.jpg"
     },
     {
-        "id": 9,
+    
         "product_name": "A Winner Talc",
         "quantity" : "28",
         "price": "200",
@@ -84,7 +84,7 @@
         "img": "https://res.cloudinary.com/dg5xbio2w/image/upload/v1651946424/Tesla-Cars/Books/book2_zgqnsw.jpg"
     },
     {
-        "id": 10,
+        
         "product_name": "The Gates Of Europe",
         "quantity" : "55",
         "price": "600",

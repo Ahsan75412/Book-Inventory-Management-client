@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Blogs = () => {
     return (
-        <div className='container'>
+        <div className='container text-white'>
             <div class="card card-style mt-5 " id='blogs'>
 
                 <div class="card-body">
