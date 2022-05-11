@@ -1,0 +1,57 @@
+.home-subscribe hr {
+    opacity: 1;
+    margin: auto;
+    width: 120px;
+    border-bottom: 2px solid #FFC107;
+}
+
+.home-subscribe h2 {
+    color: rgb(181, 181, 181);
+}
+
+.home-subscribe p {
+    letter-spacing: 1.3px;
+    font-family: 'Dosis', sans-serif;
+}
+
+.home-subscribe input, .home-subscribe input:focus {
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.3px;
+    text-align: center;
+    background: rgb(30, 30, 30);
+    padding: 10px 30px;
+    border: 0;
+    margin: 10px 0;
+    width: 600px;
+    border-radius: 25px;
+    outline: 0;
+}
+
+.home-subscribe input:focus {
+    color: #fff;
+}
+
+
+.btn-submit {
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 5px 25px;
+    border-radius: 25px;
+    background-color: rgb(177, 98, 13);
+}
+
+.btn-submit:hover {
+    color: white;
+    background-color: rgb(238, 140, 35);
+}
+
+
+
+
+
+@media only screen and (max-width:688px) {
+    .home-subscribe input, .home-subscribe input:focus {
+        width: 90%;
+    }
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './product.css';
 
-const Product = ({Product}) => {
+const Product = ({Product , children}) => {
     const {_id, price ,  img , description , product_name , quantity } = Product; 
 
     const navigate = useNavigate();
@@ -19,6 +19,9 @@ const Product = ({Product}) => {
             <p className='stye'><small>{description}</small></p>
             
             <button onClick={() => nevigateToProductDetail(_id)} className='btn btn-outline-warning'>Manage</button>
+            {
+               children 
+            }
         </div>
     );
 };

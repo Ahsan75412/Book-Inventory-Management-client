@@ -9,7 +9,7 @@ const Reviews = () => {
     
     useEffect(() => {
         setLoading(true);
-        fetch('')
+        fetch('https://dry-dusk-43936.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => {
                 setReviews(data);

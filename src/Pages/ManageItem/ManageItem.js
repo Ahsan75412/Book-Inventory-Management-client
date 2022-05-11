@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useProducts from '../../hooks/useProduts';
 import Product from '../Home/Product/Product';
-import './Inventory.css';
+import Inventory from '../Inventory/Inventory';
 
-const Inventory = ({children}) => {
-    // const [product, setProduct] = useState([]);
+const ManageItem = ({children}) => {
     const [product, setProduct] = useProducts();
 
     const navigate = useNavigate();
@@ -17,23 +17,21 @@ const Inventory = ({children}) => {
     })
     return (
         <div>
-            <h2 className='text-white py-5 text-center '>All <span className='color'>Product</span></h2>
+              <h2 className='text-white py-5 text-center '>All <span className='color'>Product</span></h2>
             <div className='container pro-items '>
 
                 {
                     product.map(product => <Product
                         key={product._id}
                         Product={product}
-                    ></Product>)
-                    // <button className='btn btn-warning'>delete</button>  
+                    ><button className='btn text-white'> Delete<i class="fa-solid fa-trash text-danger px-1"></i></button></Product>)
+                    
                 }
             
             </div>
            
-
         </div>
-      
     );
 };
 
-export default Inventory;
+export default ManageItem;
