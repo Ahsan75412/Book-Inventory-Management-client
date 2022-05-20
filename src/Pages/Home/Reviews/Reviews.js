@@ -9,7 +9,7 @@ const Reviews = () => {
     
     useEffect(() => {
         setLoading(true);
-        fetch('https://dry-dusk-43936.herokuapp.com/reviews')
+        fetch('http://localhost:5000/review')
             .then(res => res.json())
             .then(data => {
                 setReviews(data);
@@ -38,13 +38,13 @@ const Reviews = () => {
                             <div className="card single-agent h-100 p-3 p-lg-4 rounded mx-lg-2">
                                 <div className="card-body pt-3 px-0">
                                     <h5 className="card-title fw-bold">{review.name}</h5>
-                                    <p className="card-text description">{review.details}</p>
+                                    <p className="card-text description">{review.review}</p>
                                     <div>
-                                        {
-                                            [...Array(parseInt(review.rating))].map((x, index) => (
+                                        {/* {
+                                            [...Array(parseInt(review.rate))].map((x, index) => (
                                                 <i key={index} className="fas fa-star"></i>
                                             ))
-                                        }
+                                        } */}
                                     </div>
                                 </div>
                             </div>
@@ -55,13 +55,16 @@ const Reviews = () => {
                                 <div className="card single-agent h-100 p-3 p-lg-4 rounded mx-lg-2">
                                     <div className="card-body pt-3 px-0">
                                         <h5 className="card-title fw-bold">{review.name}</h5>
-                                        <p className="card-text description">{review.details}</p>
+                                        <p className="card-text description">{review.review}</p>
+                                        <p className="card-text fas fa-star">{review.rate}</p>
+
+                                                                
                                         <div>
-                                            {
-                                                [...Array(parseInt(review.rating))].map((x, index) => (
+                                            {/* {
+                                                [...Array(parseInt(review.rate))].map((x, index) => (
                                                     <i key={index} className="fas fa-star"></i>
                                                 ))
-                                            }
+                                            } */}
                                         </div>
                                     </div>
                                 </div>

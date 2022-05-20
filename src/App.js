@@ -13,6 +13,8 @@ import Inventory from './Pages/Inventory/Inventory';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import AddItem from './Pages/AddItem/AddItem';
 import ManageItem from './Pages/ManageItem/ManageItem';
+import AddReview from './Pages/AddReview/AddReview';
+import MyItems from './Pages/MyItems/MyItems';
 
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
         <Route path="/register" element={<Register></Register>} />
         <Route path="/blogs" element={<Blogs></Blogs>} />
         <Route path="/inventory" element={<Inventory></Inventory>} />
+        <Route path="/review" element={<AddReview></AddReview>} />
 
         <Route path="/inventory/:productId" element = {
             <RequireAuth>
@@ -44,6 +47,13 @@ function App() {
              <ManageItem></ManageItem>
             </RequireAuth>
         }></Route>
+
+        <Route path="/items" element = {
+            <RequireAuth>
+              <MyItems></MyItems>
+            </RequireAuth>
+        }></Route>
+
 
       
         

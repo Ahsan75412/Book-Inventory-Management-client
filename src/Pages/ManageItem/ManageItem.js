@@ -8,7 +8,7 @@ import './ManageItem.css';
 const ManageItem = ({ children }) => {
     const [product, setProduct] = useProducts();
 
-    const navigate = useNavigate();
+    
 
 
     // Delete Product code 

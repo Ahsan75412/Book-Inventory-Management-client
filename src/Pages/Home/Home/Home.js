@@ -12,6 +12,9 @@ const Home = () => {
 
            <Banner></Banner>
            <Products></Products>
+           <div className='home-inventory'>
+               <a href="/manage">Manage Inventories<i className="fa-solid fa-angles-right px-1"></i></a>
+           </div>
            <Reviews></Reviews>
            <Subscribe></Subscribe>
          

@@ -1,14 +1,16 @@
 import React, { useRef } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useProductDetail from '../../hooks/useProductDetail';
 import './productDetails.css';
 
 const ProductDetail = () => {
     const { productId } = useParams();
-    const [product] = useProductDetail(productId);
-
+    const [product , setProduct] = useProductDetail(productId);
     const quantityRef = useRef(null);
+
+
+  
 
     // add a product
     const handleRestock = (quantity) => {
@@ -25,6 +27,12 @@ const ProductDetail = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
+                    const updateItem = {
+                        ...product,
+                        quantity: updatedQuantity,
+                    };
+                    setProduct(updateItem);
+                    quantityRef.current.value = '';
                     toast('Restock Updated', { type: 'success' });
                 }
             })
@@ -32,11 +40,11 @@ const ProductDetail = () => {
     }
 
 
-// Delivered button to click an item to be delivered
+    // Delivered button to click an item to be delivered
 
     const handleDelivered = (quantity) => {
         const updatedQuantity = parseInt(quantity) - 1;
-        console.log(updatedQuantity);
+        // console.log(updatedQuantity);
 
         const newQuantity = { updatedQuantity };
         // Update Product 
@@ -50,10 +58,16 @@ const ProductDetail = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.modifiedCount > 0) {
+                if (data.modifiedCount > 0) { 
+                    const updateItem = {
+                        ...product,
+                        quantity: updatedQuantity,
+                    };
+                    setProduct(updateItem);
+                    quantityRef.current.value = '';
                     toast('Updated to Delivered', { type: 'success' });
                 }
-            })
+            });
     }
 
     // style={{ maxWidth: '650px' }}
@@ -75,11 +89,17 @@ const ProductDetail = () => {
                             <input ref={quantityRef} type="number" placeholder='Update Quantity' />
                             <button className='btn btn-warning mx-3' onClick={() => handleRestock(product.quantity)}>Restock </button>
                             <button className='btn btn-outline-warning ' onClick={() => handleDelivered(product.quantity)}>Delivered</button>
+                            {/* <Link to={`/purchase/${productId}`}>
+                                <button className="btn btn-warning">Purchase</button>
+                            </Link> */}
+                           
+                            
+                            <a href='/manage' className='px-3'>Manage Inventories</a>
+
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
     );

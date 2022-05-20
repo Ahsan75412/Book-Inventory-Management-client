@@ -12,7 +12,7 @@ const useProductDetail = (productId) => {
             .then(data => { setProduct(data); console.log(data); });
     }, [productId]);
 
-    return [product];
+    return [product ,setProduct];
 
 }
 

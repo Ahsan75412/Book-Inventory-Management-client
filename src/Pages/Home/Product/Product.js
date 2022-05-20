@@ -22,7 +22,9 @@ const Product = ({Product , children}) => {
             {
                children 
             }
+
         </div>
+       
     );
 };
 
