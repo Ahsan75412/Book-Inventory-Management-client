@@ -21,7 +21,7 @@ const MyItems = () => {
     useEffect(() => {
         setLoading(true);
         const author = { author: user?.email };
-        const url = "http://localhost:5000/items";
+        const url = "https://safe-cliffs-63488.herokuapp.com/items";
         fetch(url, {
             method: "POST",
             headers: {
@@ -46,7 +46,7 @@ const MyItems = () => {
             "Are you sure you want to delete this service?"
         );
         if (proceed) {
-            const url = `http://localhost:5000/product/${id}`;
+            const url = `https://safe-cliffs-63488.herokuapp.com/product/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

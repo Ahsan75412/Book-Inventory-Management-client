@@ -6,10 +6,10 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     const [loading, setLoading] = useState(true);
     // https://dry-dusk-43936.herokuapp.com/reviews
-    
+
     useEffect(() => {
         setLoading(true);
-        fetch('http://localhost:5000/review')
+        fetch('https://safe-cliffs-63488.herokuapp.com/review')
             .then(res => res.json())
             .then(data => {
                 setReviews(data);
@@ -58,7 +58,7 @@ const Reviews = () => {
                                         <p className="card-text description">{review.review}</p>
                                         <p className="card-text fas fa-star">{review.rate}</p>
 
-                                                                
+
                                         <div>
                                             {
                                                 [...Array(parseInt(review.rate))].map((x, index) => (

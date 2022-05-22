@@ -6,18 +6,18 @@ import './productDetails.css';
 
 const ProductDetail = () => {
     const { productId } = useParams();
-    const [product , setProduct] = useProductDetail(productId);
+    const [product, setProduct] = useProductDetail(productId);
     const quantityRef = useRef(null);
 
 
-  
+
 
     // add a product
     const handleRestock = (quantity) => {
         const updatedQuantity = parseInt(quantity) + parseInt(quantityRef.current.value);
         const newQuantity = { updatedQuantity };
 
-        fetch(`http://localhost:5000/product/${productId}`, {
+        fetch(`https://safe-cliffs-63488.herokuapp.com/product/${productId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ const ProductDetail = () => {
         const newQuantity = { updatedQuantity };
         // Update Product 
 
-        fetch(`http://localhost:5000/product/${productId}`, {
+        fetch(`https://safe-cliffs-63488.herokuapp.com/product/${productId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ const ProductDetail = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.modifiedCount > 0) { 
+                if (data.modifiedCount > 0) {
                     const updateItem = {
                         ...product,
                         quantity: updatedQuantity,
@@ -92,8 +92,8 @@ const ProductDetail = () => {
                             {/* <Link to={`/purchase/${productId}`}>
                                 <button className="btn btn-warning">Purchase</button>
                             </Link> */}
-                           
-                            
+
+
                             <a href='/manage' className='px-3'>Manage Inventories</a>
 
                         </div>

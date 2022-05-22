@@ -2,13 +2,19 @@
 
 [Project Client Repo Link] (https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Ahsan75412) 
 
-[Project client Live Site :] ()
+[Project client Live Site :] (https://book-inventory-client.web.app/)
 
 [Project Server Repo Link] (https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Ahsan75412) 
 
-[Project Server Live Site :] ()
+[Project Server Live Site :] (https://safe-cliffs-63488.herokuapp.com/)
 
-[Project Server Live Site :] ()
+
+
+
+
+[Stack-Overflow questions Link :] (https://stackoverflow.com/questions/72339930/jwt-token-can-not-genarate-cant-understand-what-the-problem-is-here)
+
+
 
 
 ## Project Details:
@@ -19,6 +25,7 @@
 * delivered System use .
 * you can added Product if you as a user .
 * if url a not found then Create a 404 page (not found page).
+* user email find which product added.
 
 
 ## Bonus Part 

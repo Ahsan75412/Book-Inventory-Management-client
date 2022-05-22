@@ -4,13 +4,13 @@ import useProducts from '../../hooks/useProduts';
 import Product from '../Home/Product/Product';
 import './Inventory.css';
 
-const Inventory = ({children}) => {
+const Inventory = ({ children }) => {
     // const [product, setProduct] = useState([]);
     const [product, setProduct] = useProducts();
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('https://safe-cliffs-63488.herokuapp.com/product')
             .then(res => res.json())
             .then(data => { setProduct(data); })
     })
@@ -26,12 +26,12 @@ const Inventory = ({children}) => {
                     ></Product>)
                     // <button className='btn btn-warning'>delete</button>  
                 }
-            
+
             </div>
-           
+
 
         </div>
-      
+
     );
 };
 

@@ -15,7 +15,7 @@ const ManageItem = ({ children }) => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure you want to delete this product?');
         if (proceed) {
-            const url = `http://localhost:5000/product/${id}`;
+            const url = `https://safe-cliffs-63488.herokuapp.com/product/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -31,7 +31,7 @@ const ManageItem = ({ children }) => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('https://safe-cliffs-63488.herokuapp.com/product')
             .then(res => res.json())
             .then(data => { setProduct(data); })
     })

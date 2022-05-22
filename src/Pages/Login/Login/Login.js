@@ -29,7 +29,7 @@ const Login = () => {
 
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
-    if(loading || sending){
+    if (loading || sending) {
         return <Loading></Loading>
     }
 
@@ -40,7 +40,7 @@ const Login = () => {
 
     if (error) {
         errorElement = <p className='text-danger text-center font-weight-bold'>Error: {error?.message} </p>
-       
+
 
     }
 
@@ -49,10 +49,10 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-       await signInWithEmailAndPassword(email, password);
-       const {data} = await axios.post('http://localhost:5000/login', {email});
-       localStorage.setItem('accessToken', data.accessToken);
-       navigate(from, { replace: true });
+        await signInWithEmailAndPassword(email, password);
+        const { data } = await axios.post('https://safe-cliffs-63488.herokuapp.com/login', { email });
+        localStorage.setItem('accessToken', data.accessToken);
+        navigate(from, { replace: true });
 
     }
 
@@ -62,48 +62,48 @@ const Login = () => {
 
     }
 
-    const resetPassword = async() => {
+    const resetPassword = async () => {
         const email = emailRef.current.value;
-     if(email){
-        await sendPasswordResetEmail(email);
-        toast.success('Password reset email sent');
-     }
-     else{
-        toast.error('Please enter your email');
-     }
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast.success('Password reset email sent');
+        }
+        else {
+            toast.error('Please enter your email');
+        }
     }
     return (
         <div className='container w-50 mx-auto mt-5 login text-white'>
-        <h2 className='text-warning text-center mb-5'>Please Login</h2>
+            <h2 className='text-warning text-center mb-5'>Please Login</h2>
 
-        <Form onSubmit={handleSubmit} >
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form onSubmit={handleSubmit} >
+                <Form.Group className="mb-3" controlId="formBasicEmail">
 
-                <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
+                    <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
 
-            </Form.Group>
+                </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-3" controlId="formBasicPassword">
 
-                <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
-            </Form.Group>
-         
-            <Button variant="outline-warning w-50 mx-auto d-block mb-3" type="submit">
-            <i className="fa-solid fa-user px-2"></i>
-                Login
-            </Button>
-        </Form>
-        {errorElement}
-        <p>New to Book Inventory? <Link to="/register" className='text-warning text-decoration-none' onClick={navigateRegister}>Please register</Link></p>
+                    <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
+                </Form.Group>
 
-        <p>Forget Password? <button  className='text-warning btn btn-link text-decoration-none' onClick={resetPassword}>Reset Password</button></p>
+                <Button variant="outline-warning w-50 mx-auto d-block mb-3" type="submit">
+                    <i className="fa-solid fa-user px-2"></i>
+                    Login
+                </Button>
+            </Form>
+            {errorElement}
+            <p>New to Book Inventory? <Link to="/register" className='text-warning text-decoration-none' onClick={navigateRegister}>Please register</Link></p>
 
-      {/* social login component here  */}
+            <p>Forget Password? <button className='text-warning btn btn-link text-decoration-none' onClick={resetPassword}>Reset Password</button></p>
 
-        <SocialLogin></SocialLogin>
+            {/* social login component here  */}
 
-     
-    </div>
+            <SocialLogin></SocialLogin>
+
+
+        </div>
     );
 };
 
