@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import './AddItem.css';
 import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
 
 const AddItem = () => {
 
@@ -26,6 +27,7 @@ const AddItem = () => {
                 .then(result => {
                     console.log(result);
                 })
+                toast("Item added successfully", {type: "success"});
         };
 
         console.log(user);
@@ -35,7 +37,7 @@ const AddItem = () => {
         <div className='w-50 mx-auto'>
             <h2 className='mt-5 mb-5 text-warning text-center '>Please add Your Book in inventory</h2>
 
-            <form className='d-flex flex-column pd' onSubmit={handleSubmit(onSubmit)}>
+            <form className='d-flex flex-column pd' onSubmit={handleSubmit(onSubmit) }>
                 <input className='mb-2' placeholder='Photo URL' type="text" {...register("img")} />
                 <input className='mb-2' placeholder='Name' {...register("product_name", { required: true, maxLength: 20 })} />
                 <input className='mb-2' placeholder='Supplier Name' {...register("supplier", { required: true, maxLength: 20 })} />

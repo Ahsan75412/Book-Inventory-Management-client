@@ -70,7 +70,7 @@ const Register = () => {
                     type="submit"
                     value="Register" />
             </form>
-            <p>Already have an account? <Link to="/login" className='text-danger text-decoration-none' onClick={navigateLogin}>Please Login</Link></p>
+            <p className='text-white'>Already have an account? <Link to="/login" className='text-danger text-decoration-none' onClick={navigateLogin}>Please Login</Link></p>
 
             {/* import social login design here */}
             <SocialLogin></SocialLogin>

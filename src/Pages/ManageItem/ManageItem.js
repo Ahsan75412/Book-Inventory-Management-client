@@ -8,7 +8,7 @@ import './ManageItem.css';
 const ManageItem = ({ children }) => {
     const [product, setProduct] = useProducts();
 
-    
+
 
 
     // Delete Product code 
@@ -43,8 +43,8 @@ const ManageItem = ({ children }) => {
                 {
                     product.map(product => <Product
                         key={product._id}
-                        Product={product}
-                    ><button className='delete' onClick={() => handleDelete(product._id)}> <i class="fa-solid fa-trash"></i></button></Product>)
+                        product={product}
+                    ><button className='delete' onClick={() => handleDelete(product._id)}> <i className="fa-solid fa-trash"></i></button></Product>)
 
                 }
 

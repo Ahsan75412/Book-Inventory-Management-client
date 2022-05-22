@@ -50,7 +50,7 @@ const SocialLogin = () => {
                     onClick={() => signInWithGoogle()}
 
                     className='btn btn-outline-warning w-50 d-block mx-auto my-2'>
-                    
+                    <i className="fa-brands fa-google"></i>
                     <span className='px-2'> Google Sign In</span>
                 </button>
             </div>

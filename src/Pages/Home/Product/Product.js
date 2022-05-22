@@ -2,8 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './product.css';
 
-const Product = ({Product , children}) => {
-    const {_id, price ,  img , description , product_name , quantity } = Product; 
+const Product = ({ product, children }) => {
+    const { _id, price, img, description, product_name, quantity } = product;
 
     const navigate = useNavigate();
     const nevigateToProductDetail = (id) => {
@@ -17,14 +17,14 @@ const Product = ({Product , children}) => {
             <p className='stye text-center'>Quantity: {quantity}</p>
             <p className='stye text-center'>Price: {price}</p>
             <p className='stye'><small>{description}</small></p>
-            
+
             <button onClick={() => nevigateToProductDetail(_id)} className='btn btn-outline-warning'>Manage</button>
             {
-               children 
+                children
             }
 
         </div>
-       
+
     );
 };
 

@@ -8,7 +8,6 @@ const Inventory = ({children}) => {
     // const [product, setProduct] = useState([]);
     const [product, setProduct] = useProducts();
 
-    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('http://localhost:5000/product')
@@ -23,7 +22,7 @@ const Inventory = ({children}) => {
                 {
                     product.map(product => <Product
                         key={product._id}
-                        Product={product}
+                        product={product}
                     ></Product>)
                     // <button className='btn btn-warning'>delete</button>  
                 }

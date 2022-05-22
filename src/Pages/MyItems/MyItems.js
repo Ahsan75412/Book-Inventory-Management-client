@@ -8,16 +8,20 @@ import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 import Product from "../Home/Product/Product";
 
+import './MyItems.css';
+
 
 
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
-    const [products, setProducts] = useState([]);
+    const [product, setProduct] = useState([]);
+    const [loading, setLoading] = React.useState(true);
 
     useEffect(() => {
+        setLoading(true);
         const author = { author: user?.email };
-        const url = "http://localhost:5000/product";
+        const url = "http://localhost:5000/items";
         fetch(url, {
             method: "POST",
             headers: {
@@ -28,7 +32,8 @@ const MyItems = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data[0]) {
-                    setProducts(data);
+                    setProduct(data);
+                    setLoading(false);
                     console.log(data);
                 } else {
                     alert("No items found");
@@ -41,39 +46,43 @@ const MyItems = () => {
             "Are you sure you want to delete this service?"
         );
         if (proceed) {
-            const url = `http:localhost:5000/product/${id}`;
+            const url = `http://localhost:5000/product/${id}`;
             fetch(url, {
-                method: "DELETE",
+                method: 'DELETE'
             })
-                .then((res) => res.json())
-                .then((data) => {
+                .then(res => res.json())
+                .then(data => {
                     console.log(data);
-                    const remaining = products.filter((p) => p._id !== id);
-                    setProducts(remaining);
+                    const remainingProducts = product.filter(product => product._id !== id);
+                    setProduct(remainingProducts);
+
                 });
+
         }
     };
+
+    if (loading) {
+        return <div>Loading...</div>
+    }
+
     return (
-        <div className="container mx-auto row row-cols-1 row-cols-md-3 g-4 g-lg-5 py-5">
-            {products.map((product) => (
-                <Product key={product._id} product={product}>
-                    <div className="d-flex gap-4">
-                        <Link to={`/product/${product._id}`}>
-                            <button className="btn btn-book">
-                                Manage &nbsp;
-                                <i className="fas fa-cart-plus"></i>
+
+        <div className="pdd">
+            <div className="container mx-auto row row-cols-1 row-cols-md-3 g-4 g-lg-5 py-5 mt-5 ">
+                {product.map((product) => (
+                    <Product key={product._id} product={product}>
+                        <div className="d-flex gap-4  ">
+                            <button
+                                onClick={() => handleDelete(product._id)}
+                                className="btn btn-book btn-danger mt-2 mx-auto"
+                            >
+                                Delete &nbsp;
+                                <i className="fa-solid fa-trash"></i>
                             </button>
-                        </Link>
-                        <button
-                            onClick={() => handleDelete(product._id)}
-                            className="btn btn-book"
-                        >
-                            Delete &nbsp;
-                            <i className="fas fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </Product>
-            ))}
+                        </div>
+                    </Product>
+                ))}
+            </div>
         </div>
     );
 };

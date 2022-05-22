@@ -40,11 +40,11 @@ const Reviews = () => {
                                     <h5 className="card-title fw-bold">{review.name}</h5>
                                     <p className="card-text description">{review.review}</p>
                                     <div>
-                                        {/* {
+                                        {
                                             [...Array(parseInt(review.rate))].map((x, index) => (
                                                 <i key={index} className="fas fa-star"></i>
                                             ))
-                                        } */}
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -60,11 +60,11 @@ const Reviews = () => {
 
                                                                 
                                         <div>
-                                            {/* {
+                                            {
                                                 [...Array(parseInt(review.rate))].map((x, index) => (
                                                     <i key={index} className="fas fa-star"></i>
                                                 ))
-                                            } */}
+                                            }
                                         </div>
                                     </div>
                                 </div>

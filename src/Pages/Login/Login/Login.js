@@ -8,6 +8,7 @@ import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../../Shared/Loading/Loading';
 import './Login.css';
+import axios from 'axios';
 
 
 const Login = () => {
@@ -34,7 +35,7 @@ const Login = () => {
 
 
     if (user) {
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
     }
 
     if (error) {
@@ -43,12 +44,15 @@ const Login = () => {
 
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async e => {
         e.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        signInWithEmailAndPassword(email, password);
+       await signInWithEmailAndPassword(email, password);
+       const {data} = await axios.post('http://localhost:5000/login', {email});
+       localStorage.setItem('accessToken', data.accessToken);
+       navigate(from, { replace: true });
 
     }
 
@@ -85,6 +89,7 @@ const Login = () => {
             </Form.Group>
          
             <Button variant="outline-warning w-50 mx-auto d-block mb-3" type="submit">
+            <i className="fa-solid fa-user px-2"></i>
                 Login
             </Button>
         </Form>
