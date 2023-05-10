@@ -9,7 +9,7 @@ const Products = () => {
 
 
     useEffect(() => {
-        fetch('https://safe-cliffs-63488.herokuapp.com/product')
+        fetch('https://book-inventory-wvx9.onrender.com/product')
             .then(res => res.json())
             .then(data => { setProducts(data); })
 

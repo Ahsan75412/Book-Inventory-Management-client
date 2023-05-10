@@ -50,7 +50,7 @@ const Login = () => {
         const password = passwordRef.current.value;
 
         await signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post('https://safe-cliffs-63488.herokuapp.com/login', { email });
+        const { data } = await axios.post('https://book-inventory-wvx9.onrender.com/login', { email });
         localStorage.setItem('accessToken', data.accessToken);
         navigate(from, { replace: true });
 

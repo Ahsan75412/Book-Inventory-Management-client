@@ -8,7 +8,7 @@ const AddReview = () => {
 
     const onSubmit = data => {
         console.log(data);
-        const url = `https://safe-cliffs-63488.herokuapp.com/review`;
+        const url = `https://book-inventory-wvx9.onrender.com/review`;
         fetch(url, {
             method: 'POST',
             headers: {

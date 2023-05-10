@@ -9,7 +9,7 @@ const Reviews = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch('https://safe-cliffs-63488.herokuapp.com/review')
+        fetch('https://book-inventory-wvx9.onrender.com/review')
             .then(res => res.json())
             .then(data => {
                 setReviews(data);

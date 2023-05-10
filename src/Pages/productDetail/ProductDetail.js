@@ -17,7 +17,7 @@ const ProductDetail = () => {
         const updatedQuantity = parseInt(quantity) + parseInt(quantityRef.current.value);
         const newQuantity = { updatedQuantity };
 
-        fetch(`https://safe-cliffs-63488.herokuapp.com/product/${productId}`, {
+        fetch(`https://book-inventory-wvx9.onrender.com/product/${productId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ const ProductDetail = () => {
         const newQuantity = { updatedQuantity };
         // Update Product 
 
-        fetch(`https://safe-cliffs-63488.herokuapp.com/product/${productId}`, {
+        fetch(`https://book-inventory-wvx9.onrender.com/product/${productId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

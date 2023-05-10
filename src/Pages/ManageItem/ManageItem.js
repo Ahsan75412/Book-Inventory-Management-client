@@ -15,7 +15,7 @@ const ManageItem = ({ children }) => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure you want to delete this product?');
         if (proceed) {
-            const url = `https://safe-cliffs-63488.herokuapp.com/product/${id}`;
+            const url = `https://book-inventory-wvx9.onrender.com/product/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -31,7 +31,7 @@ const ManageItem = ({ children }) => {
     }
 
     useEffect(() => {
-        fetch('https://safe-cliffs-63488.herokuapp.com/product')
+        fetch('https://book-inventory-wvx9.onrender.com/product')
             .then(res => res.json())
             .then(data => { setProduct(data); })
     })

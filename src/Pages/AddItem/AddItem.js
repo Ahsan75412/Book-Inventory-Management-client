@@ -14,7 +14,7 @@ const AddItem = () => {
     const onSubmit = data => {
         data.email = user?.email;
         console.log(data);
-        const url = `https://safe-cliffs-63488.herokuapp.com/product`;
+        const url = `https://book-inventory-wvx9.onrender.com/product`;
         fetch(url, {
             method: 'POST',
             headers: {

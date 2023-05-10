@@ -1,12 +1,12 @@
 # Getting Started with Books Inventory Project.
 
-[Project Client Repo Link] (https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Ahsan75412) 
+[Project Client Repo Link] (https://github.com/Ahsan75412/Book-Inventory-Management-client) 
 
 [Project client Live Site :] (https://book-inventory-client.web.app/)
 
-[Project Server Repo Link] (https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Ahsan75412) 
+[Project Server Repo Link] (https://github.com/Ahsan75412/Book-Inventory-Management-Server) 
 
-[Project Server Live Site :] (https://safe-cliffs-63488.herokuapp.com/)
+[Project Server Live Site :] (https://book-inventory-wvx9.onrender.com/)
 
 
 
